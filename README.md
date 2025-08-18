@@ -4,6 +4,11 @@
 
 [![codecov](https://codecov.io/gh/MOCAP4ROS2-Project/mocap4r2_optitrack_driver/rolling/graph/badge.svg)](https://codecov.io/gh/MOCAP4ROS2-Project/mocap4r2_optitrack_driver)
 
+Source your ROS2:
+```
+source /opt/ros/jazzy/setup.bash
+```
+
 Create workspace:
 ```
 mkdir -p mocap4r2_ws/src && cd mocap4r2_ws/src
@@ -14,12 +19,13 @@ git clone https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack.git
 ```
 Install dependencies:
 ```
+cd ..
+vcs import src < src/mocap4ros2_optitrack/dependency_repos.repos
 rosdep install --from-paths src --ignore-src -r -y
-vcs import < mocap4ros2_optitrack/dependency_repos.repos
 ```
 Compiling workspace:
 ```
-cd .. && colcon build --symlink-install
+colcon build --symlink-install
 ```
 Source workspace:
 ```
