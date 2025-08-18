@@ -170,7 +170,11 @@ OptitrackDriverNode::process_frame(sFrameOfMocapData * data)
     for (int i = 0; i < data->nRigidBodies; i++) {
       mocap4r2_msgs::msg::RigidBody rb;
 
-      rb.rigid_body_name = std::to_string(data->RigidBodies[i].ID);
+      // rb.rigid_body_name = std::to_string(data->RigidBodies[i].ID);
+      // A rigid body ID can change if rigid bodies are added to optitrack.
+      // Therefore, use the rigid body name, not the ID.
+      rb.rigid_body_name = std::string(data_descriptions->arrDataDescriptions[i].Data.RigidBodyDescription->szName);
+
       rb.pose.position.x = data->RigidBodies[i].x;
       rb.pose.position.y = data->RigidBodies[i].y;
       rb.pose.position.z = data->RigidBodies[i].z;
