@@ -1,3 +1,5 @@
+Adapted from [https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack](https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack).
+
 # mocap4r2_optitrack_driver
 
 [![rolling](https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack/actions/workflows/rolling.yaml/badge.svg)](https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack/actions/workflows/rolling.yaml)
